@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <style>
+        /* Reset some default styles */
+        body, ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Style for the navigation bar */
+        .navbar {
+            background-color: #333; /* Background color for the navbar */
+            overflow: hidden;
+        }
+
+        .navbar a {
+            float: left; /* Float the links to the left */
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd; /* Background color on hover */
+            color: black;
+        }
+
+        /* Logo styles */
+        .logo {
+            margin-left: 20px; /* Space between logo and links */
+            margin-top: 5px; /* Adjust vertical alignment */
+            float: left; /* Make the logo float left */
+        }
+
+        /* Style for the navigation links */
+        .navbar ul {
+            list-style-type: none;
+            text-align: right;
+            margin-right: 20px; /* Space between links and logo */
+        }
+
+        /* Style for each list item (link) */
+        .navbar li {
+            display: inline-block;
+            margin-left: 20px; /* Space between links */
+        }
+
+        /* Style for the video container */
+        .video-container {
+            position: relative;
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1; /* Place the video behind other content */
+        }
+
+        /* Content styles */
+        .content {
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img class="logo" src="https://img.freepik.com/premium-vector/luxury-jewelry-logo-blue-sapphire-pendant-gold-necklace-icon-logo-design_771881-230.jpg?w=100" alt="YourLogo">
+        <ul>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="#">Collections</a></li>
+            <li><a href="locations.html">Store Location</a></li>
+        </ul>
+    </div>
+    <!-- Video container -->
+    <div class="video-container">
+        <video autoplay loop muted playsinline>
+            <source src="https://drive.google.com/uc?export=download&id=1iL91j8w_7Zyz_XG0EhvKEkYvT0L8KCQS" type="video/mp4">
+            <!-- Add additional source elements for different video formats if needed -->
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+        <h1>Welcome to Our Jewelry Store</h1>
+        <p>Discover the finest jewelry collections.</p>
+    </div>
+
+</body>
+</html>

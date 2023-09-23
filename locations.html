@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location Page</title>
+    <style>
+        /* Set the background image */
+        body {
+            background-image: url('https://img.freepik.com/premium-vector/illuminated-night-city-skyline-vector-illustration_738100-453.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Add a container for the maps */
+        .map-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        /* Add styles for the map links */
+        .map-link {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        /* Add a glow effect on hover */
+        .map-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Add margin between map links */
+        .map-link:not(:last-child) {
+            margin-bottom: 20px;
+        }
+
+        /* Add padding to the container */
+        .map-container {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="map-container">
+        <!-- Location 1 - Indapur Map -->
+        <a class="map-link" href="https://www.google.com/maps/place/Indapur,Maharashtra,India" target="_blank">Indapur Map</a>
+
+        <!-- Location 2 - Baramati Map -->
+        <a class="map-link" href="https://www.google.com/maps/place/Baramati,Maharashtra,India" target="_blank">Baramati Map</a>
+
+        <!-- Location 3 - Pune Map -->
+        <a class="map-link" href="https://www.google.com/maps/place/Pune,Maharashtra,India" target="_blank">Pune Map</a>
+    </div>
+</body>
+</html>

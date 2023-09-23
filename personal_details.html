@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details Page</title>
+    <style>
+        /* CSS styles for your user interface */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .user-details-container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #submit-button, #discard-button {
+            width: 48%;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        #submit-button {
+            background-color: #4CAF50;
+        }
+
+        #submit-button:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+
+        #discard-button {
+            background-color: #f44336;
+        }
+
+        #discard-button:hover {
+            background-color: #d32f2f;
+            transform: scale(1.05);
+        }
+
+        #success-message {
+            margin-top: 20px;
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="user-details-container">
+        <h2>Personal Details</h2>
+        <form id="user-details-form">
+            <div class="form-group">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required placeholder="Enter your first name">
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required placeholder="Enter your last name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email address:</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email address">
+            </div>
+            <div class="form-group">
+                <label for="phoneNumber">Phone number:</label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" required placeholder="Enter your phone number">
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required placeholder="Enter your password">
+            </div>
+            <div class="button-group">
+                <button id="submit-button" type="submit">Submit</button>
+                <button id="discard-button" type="button" onclick="resetForm()">Discard</button>
+            </div>
+            <div id="success-message"></div>
+        </form>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('user-details-form');
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+    
+                // Get user input
+                const firstName = document.getElementById('firstName').value;
+                const lastName = document.getElementById('lastName').value;
+                const email = document.getElementById('email').value;
+                const phoneNumber = document.getElementById('phoneNumber').value;
+                const gender = document.getElementById('gender').value;
+                const password = document.getElementById('password').value;
+    
+                // Create a user object with the input values
+                const user = {
+                    firstName: firstName,
+                    lastName: lastName,
+                    email: email,
+                    phoneNumber: phoneNumber,
+                    gender: gender,
+                    password: password
+                };
+    
+                // Make a POST request to your API endpoint
+                fetch('http://localhost:5206/api/Personal_details', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(user),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Display success message
+                    const successMessage = document.getElementById('success-message');
+                    successMessage.textContent = 'Data saved successfully!';
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            });
+    
+            // Function to reset the form
+            function resetForm() {
+                const form = document.getElementById('user-details-form');
+                form.reset();
+                const successMessage = document.getElementById('success-message');
+                successMessage.textContent = '';
+            }
+        });
+    </script>
+    </body>
+    </html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        /* CSS for login page */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column; /* Vertically center content */
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: gold;
+        }
+
+        .welcome-message {
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            font-size: 18px; /* Smaller font size */
+            margin-bottom: 20px; /* Add spacing between message and login form */
+        }
+
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 30px; /* Increase padding for the login form */
+            text-align: center;
+        }
+
+        .login-form {
+            max-width: 400px; /* Increase the form's width */
+            margin: 0 auto;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 24px; /* Larger font size for the login form */
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: none; /* Hide labels */
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px; /* Increase padding for the form inputs */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .remember-password {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-bottom: 10px; /* Add spacing between checkbox and login button */
+        }
+
+        .remember-password input {
+            margin-right: 5px;
+        }
+
+        #login-button {
+            width: 100%;
+            padding: 12px; /* Increase padding for the login button */
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s; /* Add animation transition */
+        }
+
+        #login-button:hover {
+            background-color: #0056b3;
+        }
+
+        .register-link {
+            margin-top: 10px; /* Add spacing above the register link */
+        }
+
+        .social-links {
+            margin-top: 20px; /* Add spacing above the social links */
+        }
+
+        .social-links a {
+            text-decoration: none;
+            margin-right: 10px; /* Add spacing between social links */
+        }
+
+        .social-links img {
+            width: 24px; /* Adjust the size of social icons */
+            height: 24px;
+            vertical-align: middle;
+            margin-right: 5px; /* Add spacing between icon and text */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="welcome-message">
+        <marquee behavior="scroll" direction="left"><h1>Welcome To Jewel Gallery</h1></marquee>
+    </div>
+    
+    <div class="login-container">
+        <div class="login-form">
+            <h2>Login</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="email" style="display: block;">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password" style="display: block;">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                </div>
+                <div class="remember-password">
+                    <input type="checkbox" id="remember">
+                    <label for="remember">Remember Password</label>
+                </div>
+                <button id="login-button" type="submit">Log In</button>
+            </form>
+            <p class="register-link">Don't have an account? <a href="#">Register User</a></p> <!-- Register Link -->
+        </div>
+        
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <script>
+        // Function to open personal_details.html
+        function openPersonalDetailsPage() {
+            window.location.href = "personal_details.html";
+        }
+        
+        // Add an event listener to the Register User link
+        document.querySelector('.register-link a').addEventListener('click', openPersonalDetailsPage);
+    </script>
+    <script>
+        // JavaScript for login page
+        const loginForm = document.getElementById("login-form");
+
+        loginForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            
+            // Replace this with your login logic
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            
+            // Example: Check if email and password are not empty
+            if (email.trim() === "" || password.trim() === "") {
+                alert("Please enter both email and password.");
+            } else {
+                // Replace this with your authentication logic
+                alert("Authentication successful!");
+            }
+        });
+
+        // jQuery animation for the login button
+        $(document).ready(function () {
+            $("#login-button").hover(function () {
+                $(this).css("background-color", "#0056b3");
+            }, function () {
+                $(this).css("background-color", "#007bff");
+            });
+        });
+    </script>
+
+</body>
+</html>

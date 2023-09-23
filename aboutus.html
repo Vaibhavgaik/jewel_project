@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Add jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background-image: url('https://i.pinimg.com/originals/6a/71/1d/6a711d3e7b7f558543f0a61d1a2eb95c.jpg'), url('https://img.freepik.com/free-photo/abstract-grunge-decorative-relief-navy-blue-stucco-wall-texture-wide-angle-rough-colored-background_1258-28311.jpg?w=2000'); /* Updated background image */
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://i.pinimg.com/originals/6a/71/1d/6a711d3e7b7f558543f0a61d1a2eb95c.jpg'); /* Background gradient and image */
+  color: white;
+}
+
+.social-links {
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 30px; /* Add margin to separate from text */
+}
+
+.social-link {
+  display: inline-block;
+  margin: 0 10px; /* Adjust spacing between links */
+}
+
+.social-link img {
+  width: 40px; /* Adjust the size of social icons */
+  height: 40px;
+  margin-right: 10px; /* Adjust spacing between icon and text */
+  vertical-align: middle;
+}
+
+.social-link a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px; /* Adjust the font size as needed */
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Faint border */
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.3); /* Background color with transparency */
+  transition: background-color 0.3s ease; /* Transition effect for background color */
+}
+
+.title:hover {
+  background-color: rgba(0, 0, 0, 0.5); /* Background color on hover */
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+/* Add effect for the text */
+.text-effect {
+  transition: color 0.3s ease;
+}
+
+.text-effect:hover {
+  color: #555;
+}
+
+/* Rectangle format for the photo */
+.img-container {
+  width: 200px;
+  height: 300px; /* Increased height */
+  background-color: rgba(255, 255, 255, 0.8); /* Background color for the rectangle with transparency */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Add shadow */
+  overflow: hidden;
+  margin: 0 auto; /* Center the container */
+  border: 2px solid #333; /* Add border */
+  float: right; /* Move the photo to the right */
+}
+
+.img-container img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease; /* Add a zoom effect */
+}
+
+/* Zoom effect on the photo */
+.img-container:hover img {
+  transform: scale(1.05);
+}
+</style>
+</head>
+<body>
+
+<!-- Your Image and Text Section -->
+<div class="about-section">
+  <div class="img-container">
+    <img src="https://drive.google.com/uc?id=1cxM0jftJq-zjqSMSycP8Hih3NXkghbJy" alt="Your Image" style="border-radius: 10px;">
+  </div>
+  <h1 class="text-effect about-title">About Me</h1>
+  
+  <p>Heyy Folks!!!, I'm a Passionate full-stack developer with a passion for building innovative and<br>
+    user-friendly web applications.I have a strong understanding of both front-end and back-end development,<br>
+    and I'm always looking for new technologies and tools to learn.</p>
+                                     <br>In this project, I used .NET Core Web API for the backend, with<br>
+    password encryption and proper validations. I also used JavaScript, HTML, and CSS for the front-end. <br>
+    I used the following tools for the project:
+    Visual Studio Code (1.76) - UI,Microsoft Visual Studio (1.81) - Web API,MySQL - Database,Postman- API testing.
+  
+  <p>I'm proud of the work I've done on this project, and I'm confident that the resulting application 
+    is both secure and reliable. I'm excited to continue working on new and innovative projects in the future.</p>
+</div>
+
+<div class="social-links">
+  <div class="social-link">
+    <a href="https://linkedin.com/in/vaibhav-gaikwad-260945227" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+    </a>
+  </div>
+  <div class="social-link">
+    <a href="https://instagram.com/vaibhav.gaikawad_?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png" alt="Instagram">
+    </a>
+  </div>
+  <div class="social-link">
+    <a href="https://github.com/Vaibhavgaik" target="_blank">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEwJPZ4itSePdjATL65qFlgKFb-mr4vUO__g&usqp=CAU" alt="GitHub">
+    </a>
+  </div>
+</div>
+
+</body>
+</html>
